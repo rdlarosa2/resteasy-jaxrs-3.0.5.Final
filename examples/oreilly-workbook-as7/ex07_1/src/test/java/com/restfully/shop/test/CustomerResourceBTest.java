@@ -21,12 +21,9 @@ public class CustomerResourceBTest
    @Test
    public void testGetTotalAmount() throws Exception
    {
-	   /* 1A. Create new cart with id=1 */
+	   /* 2A. Create new cart with id=1 */
 	      System.out.println("*** Test 2: Test Get Total Amount ***");	   
 	      System.out.println("*** Create a new Cart ***");
-	      // Create a new customer
-	      
-        
 
 	      URL postUrl = new URL("http://localhost:8080/ex07_1/services/customers/createCart");
 	      HttpURLConnection connection = (HttpURLConnection) postUrl.openConnection();
@@ -49,7 +46,7 @@ public class CustomerResourceBTest
 	      }
 	      connection.disconnect();
 	      
-	      /* 1B. Add two items to the cart */
+	      /* 2B. Add a second item to the cart */
 	      
 	      System.out.println("*** Add a second item to the cart ***");
 	      	      
@@ -73,7 +70,7 @@ public class CustomerResourceBTest
           System.out.println("Location: " + connection.getHeaderField("Location"));
           connection.disconnect();      
 	      
-	      /* 1C. Invoke getCartInformation with idCart=1 */
+	      /* 2C. Invoke getCartInformation with idCart=1 */
 	      System.out.println("*** GET Cart Information **");
 	      URL getUrl = new URL("http://localhost:8080/ex07_1/services/customers/getCartInformation/1");
 	      connection = (HttpURLConnection) getUrl.openConnection();
@@ -94,7 +91,7 @@ public class CustomerResourceBTest
 	      Assert.assertEquals(HttpURLConnection.HTTP_OK, connection.getResponseCode());
 	      connection.disconnect();	      
 	      
-	      /* 1D. Verify that the item added to the cart is present */
+	      /* 2D. Verify that the to the total amount to be paid corresponds to the sum of the quantities of the 2 items */
 
 	      System.out.println("*** GET Total Amount **");
 	      getUrl = new URL("http://localhost:8080/ex07_1/services/customers/getTotalAmount/1");
