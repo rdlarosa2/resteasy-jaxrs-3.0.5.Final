@@ -27,7 +27,7 @@ You must be sure that port 8080 is available before installing jboss-as-7.1.1.Fi
 
 6. Execute the command: git clone https://github.com/rdlarosa2/resteasy-jaxrs-3.0.5.Final.git
 
-7. Navigate to the folder C:\java\resteasy-jaxrs-3.0.5.Final\examples\oreilly-workbook-as7\ex07_1
+7. Change to the folder C:\java\resteasy-jaxrs-3.0.5.Final\examples\oreilly-workbook-as7\ex07_1
 
 8. Execute the command: mvn clean install
 This command will deploy ex07_1.war on the application server. Besides, this command will execute two test on the functionality.
